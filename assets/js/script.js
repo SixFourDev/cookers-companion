@@ -53,5 +53,47 @@ var recipeElements = [
     getTopSearches();
   });
   
-  
-  
+  // Gets all required elements
+  const searchWrapper = document.querySelector(".search-input");
+  const inputBox = searchWrapper.querySelector("input");
+  const suggBox = searchWrapper.querySelector(".autocom-box");
+
+  // Detects if user presses a key and releases it
+  inputBox.onkeyup = (e)=>{
+    let userData = e.target.value;// Key that the user presses
+    let emptyArray = [];
+    if(userData){
+      emptyArray = suggesstions.filter((data)=>{
+          // Converts the word pulled from suggestions and the user's char to lowercase and returns the word or sentence which starts with the user's word
+          return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+      });
+      emptyArray = emptyArray.map(()=>{
+          return data = '<li>'+ data +'</li>';
+      });
+      searchWrapper.classList.add("active");// Shows autocomplete box
+      showSuggestions(emptyArray);
+      let allList = suggBox.querySelectorAll("li");
+      for (let i = 0; i < array.length; i++){
+          allList[i].setAttribute("onclick", "select(this)");
+      }
+    }else{
+        searchWrapper.classList.remove("active");// Hides autocomplete box
+    }
+  }
+
+  function select(element){
+      let selectUserData = element.textContent;
+      inputBox.value = selectUserData;// Passes the list item data that the user chose into a text field
+      searchWrapper.classList.remove("active");
+  }
+
+  function showSuggestions(){
+    let listData;
+    if(!list.length){
+        userValue = inputBox.value;
+        listData = '<li>'+ userValue +'</li>';
+    }else{
+        listData = list.join('');
+    }
+    suggBox.innerHTML = listData;
+  }

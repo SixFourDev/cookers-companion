@@ -11,7 +11,7 @@
   height: 80px;
 }
 
-#wrap {
+.wrap {
   margin: 50px 20px;
   display: inline-block;
   position: relative;
@@ -19,6 +19,42 @@
   float: right;
   padding: 0;
   position: relative;
+}
+
+.wrap .search-input{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.search-input .autocom-box{
+  padding: 0px;
+  max-height: 280px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-input.active .autocom-box li{
+  display: block;
+}
+
+.autocom-box li{
+  list-style: none;
+  padding: 8px 12px;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+  display: none;
+}
+
+.autocom-box li:hover{
+  background: #efefef;
 }
 
 input[type="text"] {
@@ -33,7 +69,7 @@ input[type="text"] {
   padding-right: 60px;
   width: 0px;
   position: relative;
-  top: -30px;
+  top: -25px;
   right: 0;
   background: none;
   z-index: 3;
@@ -62,7 +98,7 @@ input[type="submit"] {
   text-indent: -10000px;
   border: none;
   position: relative;
-  top: -30px;
+  top: -25px;
   right: 0;
   z-index: 2;
   cursor: pointer;
