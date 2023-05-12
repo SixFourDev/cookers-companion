@@ -39,6 +39,9 @@ var recipeElements = [
         recipeElement.querySelector("img").src = recipe.image;
         recipeElement.querySelector(".title").textContent = recipe.label;
         recipeElement.querySelector(".content p").textContent = recipe.ingredientLines.join(", ");
+  
+        // Sets the href attribute of the "View Recipe" link to the recipe URL
+        recipeElement.querySelector("a").href = recipe.url;
       }
     } catch (error) {
       console.log(error);
@@ -49,3 +52,6 @@ var recipeElements = [
   document.addEventListener('DOMContentLoaded', function() {
     getTopSearches();
   });
+  
+  
+  
