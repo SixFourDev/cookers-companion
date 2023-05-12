@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* left section for recipe image */
+  .left-section {
+    width: 30%;
+    margin-right: 20px;
+  }
+  
+  .left-section img {
+    width: 100%;
+  }
+  
+  /* middle section for recipe details */
+  .middle-section {
+    width: 40%;
+  }
+  
+  .middle-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .middle-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* right section for nutritional info */
+  .right-section {
+    width: 30%;
+  }
+  
+  .right-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .right-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .right-section td {
+    padding: 5px;
+    border: 1px solid black;
+  }
+  
+  .right-section th {
+    padding: 5px;
+    border: 1px solid black;
+    text-align: left;
+  }
