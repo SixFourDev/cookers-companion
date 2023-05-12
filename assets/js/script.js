@@ -53,6 +53,7 @@ var recipeElements = [
     getTopSearches();
   });
   
+
   // Gets all required elements
   const searchWrapper = document.querySelector(".search-input");
   const inputBox = searchWrapper.querySelector("input");
