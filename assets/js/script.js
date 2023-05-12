@@ -4,74 +4,48 @@ var edamamAppKey = '56c52d9c111e1bbde1de87206bc6f1de';
 // Creates variables for our Nutritionix ID & Key
 var nutritionixAppId = '13554c1a';
 var nutritionixAppKey = '625ffc981e7b96d9c8f9946a57bd5bc8';
-var topSearchesURL = "https://api.edamam.com/search";
+// Creates variable query to top searches
+var query = "top searches";
 
-const recipeElements = [
-    document.querySelector(".recipe-1"),
-    document.querySelector(".recipe-2"),
-    document.querySelector(".recipe-3"),
-    document.querySelector(".recipe-4"),
-    document.querySelector(".recipe-5"),
+// Selects all of the card elements in each column
+var recipeElements = [
+    document.querySelector(".column:nth-of-type(1) .card"),
+    document.querySelector(".column:nth-of-type(2) .card"),
+    document.querySelector(".column:nth-of-type(3) .card"),
+    document.querySelector(".column:nth-of-type(4) .card"),
+    document.querySelector(".column:nth-of-type(5) .card"),
   ];
-
+  
+  // Function that gets the top 5 recipes based on the search query
   async function getTopSearches() {
+    // Creates the URL for the API request using the search query and API credentials
+    var topSearchesURL = `https://api.edamam.com/search?q=${query}&app_id=${edamamAppId}&app_key=${edamamAppKey}&from=0&to=5`;
     try {
-        const response = await fetch(`${topSearchesURL}?q=&app_id=${edamamAppId}&app_key=${edamamAppKey}&from=0&to=5`);
-      const data = await response.json();
+      // Sends a request to the API and waits for a response
+      var response = await fetch(topSearchesURL);
+      // Parses the response into JSON format
+      var data = await response.json();
+      // Extracts the recipe data from the response
+      var hits = data.hits;
   
-      const hits = data.hits;
-  
+      // Loops through each recipe element and populates it with data from the API response
       for (let i = 0; i < hits.length; i++) {
-        const recipe = hits[i].recipe;
+        var recipe = hits[i].recipe;
   
-        const recipeElement = recipeElements[i];
+        // Selects the recipe element for the current loop iteration
+        var recipeElement = recipeElements[i];
+  
+        // Updates the image, title, and ingredient text of the recipe element
         recipeElement.querySelector("img").src = recipe.image;
-        recipeElement.querySelector("h4").textContent = recipe.label;
-        recipeElement.querySelector("p").textContent = recipe.source;
-        recipeElement.querySelector("a").href = recipe.url;
+        recipeElement.querySelector(".title").textContent = recipe.label;
+        recipeElement.querySelector(".content p").textContent = recipe.ingredientLines.join(", ");
       }
     } catch (error) {
       console.log(error);
     }
   }
   
-  getTopSearches();
-
-// Created asynchronous function getRecipeData
-async function getRecipeData() {
-    // Starts with a try block for error handling
-  try {
-    // Creates a variable to wait to fetch from edamam
-    var response = await fetch(`https://api.edamam.com/search?q=pizza&app_id=${edamamAppId}&app_key=${edamamAppKey}`);
-    // Extracts data with JSON and assign it to data
-    var data = await response.json();
-    // Extracts the recipe info from the data object by accessing first index and accessing the recipe object in it
-    var recipe = data.hits[0].recipe;
-    // Sends a POST request
-    var nutritionixResponse = await fetch(`https://trackapi.nutritionix.com/v2/natural/nutrients`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-app-id': nutritionixAppId,
-        'x-app-key': nutritionixAppKey
-      },
-      body: JSON.stringify({
-        query: recipe.label
-      })
-    });
-    // Extracts the JSON data from response 
-    var nutritionixData = await nutritionixResponse.json();
-    // Extracts the calorie count from nf calories property from the first index in the foods array
-    var nutrients = nutritionixData.foods[0].nf_calories;
-    // Logs the recipe object
-    console.log('Recipe:', recipe);
-    // Logs the calorie count
-    console.log('Nutrition Information:', nutrients);
-    // Created a catch block to handle any errors
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-getRecipeData();
-
+  // Calls the getTopSearches function when the DOM content is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    getTopSearches();
+  });
