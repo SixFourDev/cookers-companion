@@ -1,3 +1,4 @@
+
 // Creates variables for our Edamam ID & Key
 var edamamAppId = '5c0067e3';
 var edamamAppKey = '56c52d9c111e1bbde1de87206bc6f1de';
