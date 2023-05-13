@@ -110,3 +110,18 @@ input[type="submit"] {
 input[type="submit"]:hover {
   opacity: 0.8;
 }
+
+.container {
+    font-size: medium;
+    padding-top: 100px;
+    justify-content: left;
+}
+
+p {
+ text-align: center;
+
+}
+
+h2 {
+  
+}
