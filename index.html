@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <title>Cooker's Companion</title>
 </head>
 <body>
+    <header class="has-text-centered">
+      <h1 class="title is-1">Cooker's Companion</h1>
+          <nav class="navbar is-transparent has-logo-above" role="navigation" aria-label="main navigation">
+              <div class="navbar-menu">
+                <div class="wrap" class="navbar-start">
+                  <form action="" autocomplete="on" class="search-input">
+                      <input id="search" name="search" type="text" placeholder="Search for recipes"><input id="search_submit" value="Search" type="submit">
+                      <div class="autocom-box">
+                        <li>chicken</li>
+                        <li>chicken</li>
+                        <li>chicken</li>
+                        <li>chicken</li>
+                        <li>chicken</li>
+                      </div>
+                    </form>
+                </div>
+                  <div class="navbar-end">
+                      <a role="button" href="#" class="navbar-item"> Home </a>
+                      <a role="button" href="#" class="navbar-item"> Top Searches </a>
+                      <a role="button" href="#" class="navbar-item"> Randomizer </a>
+                      <a role="button" href="#" class="navbar-item"> Login </a>
+                      <a role="button" href="#" class="navbar-item"> Sign Up </a>    
+                  </div>        
     <header>
         <h1>Cooker's Companion</h1>
     <nav>
@@ -21,10 +47,6 @@
     </nav>
     </header>
     <main>
-    <form>
-        <input type="text" placeholder="Search for recipes">
-        <button type="submit">Search</button>
-    </form>
     <h2>Welcome to Cooker's Companion!</h2>
     <p>Hello! Welcome to Cookers Companion a recipe application that does the hard work for you. Cookers Companion allows you and your loved ones the opportunity to turn your home into a fine dining experience in 3 easy steps. What are those steps you ask? Simply sign up, search, and save. The rest is up to you. Take a look through our wide range of recipes that range from vegan, gluten free, dairy free and more. When you sign up you will have access to 1000's of recipes that fit your interest and taste buds. You will also have access to the weeks top searches and be able to save your favorite recipes for later. So sign-up, search, save and enjoy with all of us here at Cookers Companion!   </p>
     <div class="container">
@@ -135,6 +157,7 @@
         </div>
       </section>      
     </main>
+    <script src="./assets/js/suggestions.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
