@@ -1,57 +1,81 @@
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: lightgoldenrodyellow;
+  margin: 0;
+  padding: 100px;
+}
+
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* left section for recipe image */
-  .left-section {
-    width: 30%;
-    margin-right: 20px;
-  }
-  
-  .left-section img {
-    width: 100%;
-  }
-  
-  /* middle section for recipe details */
-  .middle-section {
-    width: 40%;
-  }
-  
-  .middle-section h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .middle-section h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  /* right section for nutritional info */
-  .right-section {
-    width: 30%;
-  }
-  
-  .right-section h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  .right-section table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-  }
-  
-  .right-section td {
-    padding: 5px;
-    border: 1px solid black;
-  }
-  
-  .right-section th {
-    padding: 5px;
-    border: 1px solid black;
-    text-align: left;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* left section for recipe image */
+.left-section {
+  width: 30%;
+  margin-right: 20px;
+}
+
+.left-section img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  padding-top: 90px;
+}
+
+/* middle section for recipe details */
+.middle-section {
+  width: 40%;
+}
+
+.middle-section h2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 2em;
+  color: #444;
+}
+
+.middle-section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* right section for nutritional info */
+.right-section {
+  width: 30%;
+}
+
+.right-section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.right-section table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.right-section td {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.right-section th {
+  padding: 5px;
+  border: 1px solid black;
+  text-align: left;
+}
+
+.middle-section #ingredientsContainer,
+.middle-section #directionsContainer {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid black;
+}
