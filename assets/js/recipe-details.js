@@ -14,8 +14,8 @@ var recipeTitleElement = document.querySelector("#recipeTitle");
 var recipeIngredientsElement = document.querySelector("#ingredientsList");
 var recipeInstructionsElement = document.querySelector("#directionsList");
 
-// // Set the src attribute of the recipe image to the recipe's strMealThumb property
-// recipeImageElement.src = recipe.strMealThumb;
+// Set the src attribute of the recipe image to the recipe's strMealThumb property
+recipeImageElement.src = recipe.strMealThumb;
 
-// // Set the text content of the recipe title to the recipe's strMeal property
-// recipeTitleElement.textContent = recipe.strMeal;
+// Set the text content of the recipe title to the recipe's strMeal property
+recipeTitleElement.textContent = recipe.strMeal;
