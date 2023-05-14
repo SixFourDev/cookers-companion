@@ -1,6 +1,3 @@
-// Creates variables for our Nutritionix ID & Key
-var usdaApiKey = "vyDApqBUzUQCy1ZMXLqqqlomk9X44x8MZU4HG56g";
-
 // Retrieve the stored recipe data from localStorage
 var storedRecipe = localStorage.getItem("recipe");
 
