@@ -1,13 +1,21 @@
-// Creates variables for our Edamam ID & Key
-var edamamAppId = '5c0067e3';
-var edamamAppKey = '56c52d9c111e1bbde1de87206bc6f1de';
 // Creates variables for our Nutritionix ID & Key
 var nutritionixAppId = '13554c1a';
 var nutritionixAppKey = '625ffc981e7b96d9c8f9946a57bd5bc8';
 
-// Retrieve the recipe ID from the URL parameters
-var urlParams = URLSearchParams(window.location.search);
-var recipeId = urlParams.get('recipeId');
+// Retrieve the stored recipe data from localStorage
+var storedRecipe = localStorage.getItem("recipe");
 
-// Make an API call to fetch the recipe details using the recipeId
-async function getRecipeDetails(recipeId)
+// Convert the stored recipe data back into an object
+var recipe = JSON.parse(storedRecipe);
+
+// Select the elements on the page where you want to display the recipe details
+var recipeImageElement = document.querySelector("#recipeImage");
+var recipeTitleElement = document.querySelector("#recipeTitle");
+var recipeIngredientsElement = document.querySelector("#ingredientsList");
+var recipeInstructionsElement = document.querySelector("#directionsList");
+
+// // Set the src attribute of the recipe image to the recipe's strMealThumb property
+// recipeImageElement.src = recipe.strMealThumb;
+
+// // Set the text content of the recipe title to the recipe's strMeal property
+// recipeTitleElement.textContent = recipe.strMeal;
