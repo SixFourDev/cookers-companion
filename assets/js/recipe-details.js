@@ -19,3 +19,21 @@ recipeImageElement.src = recipe.strMealThumb;
 
 // Set the text content of the recipe title to the recipe's strMeal property
 recipeTitleElement.textContent = recipe.strMeal;
+
+// Creates empty array for the variable ingredients
+var ingredients = [];
+// For loop to iterate 20 times because API gets up to 20 ingredients
+for (let i = 1; i <= 20; i++) {
+    // Uses current loop counter (i) to fetch both ingredient and measurement from recipe object
+  var ingredient = recipe[`strIngredient${i}`];
+  var measure = recipe[`strMeasure${i}`];
+    // Checks both ingredient and measure variables are not null or empty, if true adds string containing the ingredient and its measurement to the ingredients array
+  if (ingredient && ingredient !== "" && measure && measure !== "") {
+    ingredients.push(`${ingredient} (${measure})`);
+  }
+}
+// Uses map function to transform each ingredient string to a list item, then uses join to concatenate all list items into a single string
+recipeIngredientsElement.innerHTML = ingredients.map(ingredient => `<li>${ingredient}</li>`).join("");
+
+// Set the text content of the recipe instructions to the recipe's strInstructions property
+recipeInstructionsElement.textContent = recipe.strInstructions;
