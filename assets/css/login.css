@@ -16,6 +16,7 @@ html {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    cursor: pointer;
   }
   
   .login-box {
@@ -29,6 +30,7 @@ html {
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+    
   }
   
   .login-box h2 {
@@ -36,6 +38,7 @@ html {
     padding: 0;
     color: #fff;
     text-align: center;
+    cursor: pointer;
   }
   
   .login-box .user-box {
@@ -52,6 +55,7 @@ html {
     border-bottom: 1px solid #fff;
     outline: none;
     background: transparent;
+    cursor: pointer;
   }
   .login-box .user-box label {
     position: absolute;
