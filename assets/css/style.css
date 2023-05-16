@@ -129,6 +129,18 @@ h3 {
 
 h4 {
   text-align: center;
+  color: darkgray black;
+
+}
+
+ul {
+    color: black;
+    display:inline-block;
+    border:20px ridge cadetblue;
+    padding: 50px;
+    font-size: 20px;
+    font-weight: bold ;
+    background-color: cadetblue;
 }
 
 .recipe-container,
