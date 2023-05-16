@@ -8,7 +8,7 @@ var recipeElements = [
   ];
   
   // Function that gets the top 5 recipes based on the search query
-  async function getTopSearches() {
+  async function getSearchResults() {
     // Creates the URL for the API request using the search query and API credentials
     var searchResults = `www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`;
     try {
@@ -39,7 +39,7 @@ var recipeElements = [
     }
   }
   
-  // Calls the getTopSearches function when the DOM content is loaded
+  // Calls the getSearchResults function when the DOM content is loaded
   document.addEventListener('DOMContentLoaded', function() {
-    getTopSearches();
+    getSearchResults();
   });
