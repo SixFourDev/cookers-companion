@@ -1,15 +1,26 @@
-<button onclick="window.location.href = 'index.html';">Home</button>
-<div class="field">
-    <label class="label">Username/email</label>
-    <div class="control">
-      <input class="input" type="text" placeholder="e.g Alex Smith or e.g. alexsmith@gmail.com">
+<link rel="stylesheet" href="./assets/css/login.css" />
+<button class="button" onclick="window.location.href = 'index.html';">Home</button>
+<div class="login-box">
+  <h2>Cooker's Companion Login</h2>
+  <form>
+    <div class="user-box">
+      <input type="text" name="" required="">
+      <label>Username</label>
     </div>
-  </div>
+    <div class="user-box">
+      <input type="password" name="" required="">
+      <label>Password</label>
+    </div>
+    <a href="submit.html">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </a>
+  </form>
+</div>
   
-  <div class="field">
-    <label class="label">Password</label>
-    <div class="control">
-      <input class="input" type="password" placeholder="Password">
-    </div>
-  </div>
-
+  <script src="./assets/js/login.js"></script>
+  </body>
+  </html>

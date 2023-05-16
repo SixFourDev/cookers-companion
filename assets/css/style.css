@@ -1,9 +1,16 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+main {
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
 
 .navbar-item{
   border: 1px solid black;
   font-size: 20px;
   height: 80px;
+}
+
+.navbar-end {
+  font-family: 'Poiret One', cursive;
 }
 
 .navbar-menu {
@@ -73,4 +80,57 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   opacity: 0.8;
+}
+
+div .container {
+  font-size: medium;
+  margin-top: -100px;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.container p {
+text-align: center;
+}
+
+h2 {
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Poiret One', cursive;
+  text-align: center;
+}
+
+.recipe-container,
+.container {
+text-align: center;
+margin: auto;
+}
+
+.columns {
+  background-color: cadetblue;
+}
+
+.recipe-container {
+  margin-top: 20px;
+  width: 90%;
+}
+
+ul {
+  color: black;
+  display:flex;
+  border: 25px dashed cadetblue;
+  padding: 50px;
+  font-size: 15px;
+  font-weight: bold ;
+  background-color: cadetblue;
+  padding-left: 2rem;
+  list-style-type:none;
 }

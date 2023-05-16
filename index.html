@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
-    <title>Cooker's Companion</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <title>Cooker's Companion</title>
 </head>
+
 <body>
+  <main>
     <header class="has-text-centered">
       <h1 class="title is-1">Cooker's Companion</h1>
           <nav class="navbar is-transparent has-logo-above" role="navigation" aria-label="main navigation">
@@ -29,12 +35,45 @@
                       <a role="button" href="login.html" class="navbar-item"> Login </a>
                       <a role="button" href="signup.html" class="navbar-item"> Sign Up </a>    
                   </div>        
+      <nav class="navbar is-transparent has-logo-above" role="navigation" aria-label="main navigation">
+        <div class="navbar-menu">
+          <div class="wrap" class="navbar-start">
+            <form action="" autocomplete="on" class="search-input">
+              <input id="search" name="search" type="text" placeholder="Search for recipes" href="login.html"><input id="search_submit"
+                value="Search" type="submit">
+              <div class="autocom-box">
+                <li>chicken</li>
+                <li>chicken</li>
+                <li>chicken</li>
+                <li>chicken</li>
+                <li>chicken</li>
+              </div>
+            </form>
+          </div>
+          <div id="weather">
+            <img id="weatherIcon" src="" alt="Weather Icon">
+          </div>   
+          <div class="navbar-end">
+            <a role="button" href="#" class="navbar-item"> Home </a>
+            <a role="button" href="#" class="navbar-item"> Top Searches </a>
+            <a role="button" href="#" class="navbar-item"> Randomizer </a>
+            <a role="button" href="login.html" class="navbar-item"> Login </a>
+            <a role="button" href="signup.html" class="navbar-item"> Sign Up </a>
+          </div>
     </header>
-    <main>
-    <h2>Welcome to Cooker's Companion!</h2>
-    <p>Hello! Welcome to Cookers Companion a recipe application that does the hard work for you. Cookers Companion allows you and your loved ones the opportunity to turn your home into a fine dining experience in 3 easy steps. What are those steps you ask? Simply sign up, search, and save. The rest is up to you. Take a look through our wide range of recipes that range from vegan, gluten free, dairy free and more. When you sign up you will have access to 1000's of recipes that fit your interest and taste buds. You will also have access to the weeks top searches and be able to save your favorite recipes for later. So sign-up, search, save and enjoy with all of us here at Cookers Companion!   </p>
     <div class="container">
-      <h2 class="title is-3 has-text-centered mb-6">This week's top searches:</h2>
+      <h2 class="title is-3 has-text-centered mb-6" style="color: black darkgrey; font-size: 40px;">Welcome to Cooker's
+        Companion!</h2>
+      <p>Hello! Welcome to Cookers Companion a recipe application that does the hard work for you. Cookers Companion
+        allows you and your loved ones the opportunity to turn your home into a fine dining experience in 3 easy steps.
+        What are those steps you ask? Simply sign up, search, and save. The rest is up to you. Take a look through our
+        wide range of recipes that range from vegan, gluten free, dairy free and more. When you sign up you will have
+        access to 1000's of recipes that fit your interest and taste buds. You will also have access to the weeks top
+        searches and be able to save your favorite recipes for later. So sign-up, search, save and enjoy with all of us
+        here at Cookers Companion!</p>
+    </div>
+    <div class="recipe-container">
+      <h3 class="title is-3 has-text-centered mb-6" style="color: black darkgrey; font-size: 40px;">Featured Recipes:</h3>
       <hr class="mb-6">
       <div class="columns">
         <div class="column is-one-fifth">
@@ -48,7 +87,7 @@
               <p class="title is-4">Recipe Title</p>
               <div class="content">
                 <p>Recipe description.</p>
-                <a href="#">View Recipe</a>
+                <a href="recipe-details.html?recipeId=123" class="recipeLink">View Recipe</a>
               </div>
             </div>
           </div>
@@ -64,7 +103,7 @@
               <p class="title is-4">Recipe Title</p>
               <div class="content">
                 <p>Recipe description.</p>
-                <a href="#">View Recipe</a>
+                <a href="recipe-details.html?recipeId=123" class="recipeLink">View Recipe</a>
               </div>
             </div>
           </div>
@@ -80,7 +119,7 @@
               <p class="title is-4">Recipe Title</p>
               <div class="content">
                 <p>Recipe description.</p>
-                <a href="#">View Recipe</a>
+                <a href="recipe-details.html?recipeId=123" class="recipeLink">View Recipe</a>
               </div>
             </div>
           </div>
@@ -96,7 +135,7 @@
               <p class="title is-4">Recipe Title</p>
               <div class="content">
                 <p>Recipe description.</p>
-                <a href="#">View Recipe</a>
+                <a href="recipe-details.html?recipeId=123" class="recipeLink">View Recipe</a>
               </div>
             </div>
           </div>
@@ -112,35 +151,40 @@
               <p class="title is-4">Recipe Title</p>
               <div class="content">
                 <p>Recipe description.</p>
-                <a href="#">View Recipe</a>
+                <a href="recipe-details.html?recipeId=123" class="recipeLink">View Recipe</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>    
+    </div>
     <section>
-        <h3>Why choose Cooker's Companion?</h3>
-        <div style="display:flex;">
-          <div style="flex:1;">
-            <ul>
-              <li><span>&#x1F50D;</span> Easy recipe search</li>
-              <li><span>&#x1F374;</span> Filter by dietary restrictions</li>
-              <li><span>&#x1F9C2;</span> Nutritional information for each recipe</li>
-              <li><span>&#x1F4B8;</span> Save your favorite recipes</li>
-            </ul>
-          </div>
-          <div style="flex:1;">
-            <ul>
-              <li><span>&#x1F355;</span> Personalized meal plans</li>
-              <li><span>&#x1F4E6;</span> Shopping list generator</li>
-              <li><span>&#x1F60B;</span> Connect with other foodies</li>
-              <li><span>&#x1F4E2;</span> Weekly newsletter with new recipes</li>
-            </ul>
-          </div>
+      <h4 style="font-size: 25px; font-weight: bold; margin-top: 40px;">Why choose Cooker's Companion?</h4>
+      <div style="display:flex;">
+        <div style="flex:1;">
+          <ul>
+            <li><span>&#x1F50D;</span> Easy recipe search</li>
+            <li><span>&#x1F374;</span> Filter by dietary restrictions</li>
+            <li><span>&#x1F9C2;</span> Nutritional information for each recipe</li>
+            <li><span>&#x1F4B8;</span> Save your favorite recipes</li>
+          </ul>
+        </div>
+        <div style="flex:1;">
+          <ul>
+            <li><span>&#x1F355;</span> Personalized meal plans</li>
+            <li><span>&#x1F4E6;</span> Shopping list generator</li>
+            <li><span>&#x1F60B;</span> Connect with other foodies</li>
+            <li><span>&#x1F4E2;</span> Weekly newsletter with new recipes</li>
+          </ul>
         </div>
       </section>      
     </main>
     <script src="./assets/js/script.js"></script>
+      </div>
+    </section>
+  </main>
+  <script src="./assets/js/suggestions.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
