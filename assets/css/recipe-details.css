@@ -3,52 +3,41 @@ body {
   color: #333;
   background-color: lightgoldenrodyellow;
   margin: 0;
-  padding: 100px;
+  padding: 20px;
 }
 
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: stretch; /* Align vertically and take the full height of the tallest element */
 }
 
-/* left section for recipe image */
-.left-section {
-  width: 30%;
-  margin-right: 20px;
+/* Common styles for sections */
+.left-section,
+.middle-section,
+.right-section {
+  flex: 1; /* Each takes up equal width */
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin: 10px; /* space between the boxes */
+  padding: 20px; /* space inside the boxes */
+  box-sizing: border-box; /* border and padding are included in the box's total width and height */
 }
 
 .left-section img {
-  width: 100%;
+  max-width: 100%; /* makes the image responsive */
   height: auto;
-  object-fit: cover;
   border-radius: 10px;
-  padding-top: 90px;
-}
-
-/* middle section for recipe details */
-.middle-section {
-  width: 40%;
 }
 
 .middle-section h2 {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   margin-top: 20px;
   font-size: 2em;
   color: #444;
 }
 
-.middle-section h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-/* right section for nutritional info */
-.right-section {
-  width: 30%;
-}
-
+.middle-section h3,
 .right-section h3 {
   font-size: 20px;
   margin-bottom: 10px;
@@ -60,22 +49,17 @@ body {
   margin-bottom: 20px;
 }
 
-.right-section td {
+.right-section td,
+.right-section th {
   padding: 5px;
   border: 1px solid black;
 }
 
 .right-section th {
-  padding: 5px;
-  border: 1px solid black;
   text-align: left;
 }
 
 .middle-section #ingredientsContainer,
 .middle-section #directionsContainer {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
   margin-top: 20px;
-  border: 1px solid black;
 }
