@@ -161,11 +161,12 @@ margin: auto;
 
 ul {
   color: black;
-  display:inline-block;
-  justify-content: center;
-  border:20px ridge cadetblue;
+  display:flex;
+  border: 25px dashed cadetblue;
   padding: 50px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold ;
   background-color: cadetblue;
+  padding-left: 2rem;
+  list-style-type:none;
 }
