@@ -3,14 +3,10 @@ main {
   font-weight: bold;
 }
 
-.navbar-item{
+.navbar-end{
   border: 1px solid black;
   font-size: 20px;
   height: 80px;
-}
-
-.navbar-end {
-  font-family: 'Poiret One', cursive;
 }
 
 .navbar-menu {
