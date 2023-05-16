@@ -1,9 +1,5 @@
-// Creates variables for our Edamam ID & Key
-var edamamAppId = '5c0067e3';
-var edamamAppKey = '56c52d9c111e1bbde1de87206bc6f1de';
-// Creates variables for our Nutritionix ID & Key
-var nutritionixAppId = '13554c1a';
-var nutritionixAppKey = '625ffc981e7b96d9c8f9946a57bd5bc8';
+var themealdbAppId = '';
+var themealdbAppKey = '1';
 // Creates variable query to top searches
 var query = "top searches";
 
@@ -19,10 +15,10 @@ var recipeElements = [
   // Function that gets the top 5 recipes based on the search query
   async function getTopSearches() {
     // Creates the URL for the API request using the search query and API credentials
-    var topSearchesURL = `https://api.edamam.com/search?q=${query}&app_id=${edamamAppId}&app_key=${edamamAppKey}&from=0&to=5`;
+    var searchResults = `www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata`;
     try {
       // Sends a request to the API and waits for a response
-      var response = await fetch(topSearchesURL);
+      var response = await fetch(searchResults);
       // Parses the response into JSON format
       var data = await response.json();
       // Extracts the recipe data from the response
