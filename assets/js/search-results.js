@@ -1,3 +1,4 @@
+
 // Selects all of the card elements in each column
 var recipeElements = [
     document.querySelector(".column:nth-of-type(1) .card"),
@@ -10,7 +11,7 @@ var recipeElements = [
   // Function that gets the top 5 recipes based on the search query
   async function getSearchResults() {
     // Creates the URL for the API request using the search query and API credentials
-    var searchResults = `www.themealdb.com/api/json/v1/1/filter.php?c=Seafood`;
+    var searchResults = `www.themealdb.com/api/json/v1/1/filter.php?c=${search}`;
     try {
       // Sends a request to the API and waits for a response
       var response = await fetch(searchResults);
