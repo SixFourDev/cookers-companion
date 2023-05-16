@@ -10,7 +10,7 @@ var recipeElements = [
 // Function that gets the top 5 recipes based on the search query
 async function getTopSearches() {
   // Assigns topSearchesURL TheMealDB API endpoint
-  var topSearchesURL = `https://api.edamam.com/search?q=${query}&app_id=${edamamAppId}&app_key=${edamamAppKey}&from=0&to=5`;
+  var topSearchesURL = `https://www.themealdb.com/api/json/v1/1/random.php`;
   // Starts block of code to test for errors while being executed
   try {
     // For loop to iterate over the recipeElements array
@@ -28,9 +28,9 @@ async function getTopSearches() {
     // Logs any error that may have occurred in the try block
     console.log(error);
   }
-  
+
   // Calls the getTopSearches function when the DOM content is loaded
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     getTopSearches();
   });
 }
@@ -72,10 +72,28 @@ getTopSearches();
 // Weather API Key
 var weatherApiKey = "0874d781cac886c8251059cc7a09d09a";
 
-navigator.geolocation.getCurrentPosition(function(position) {
-  var lat = position.coords.latitude;
-  var lon = position.coords.longitude;
+// Try to get the coordinates from localStorage
+var storedLat = localStorage.getItem("latitude");
+var storedLon = localStorage.getItem("longitude");
 
+// If we have coordinates in localStorage, use them
+if (storedLat && storedLon) {
+  fetchWeatherData(storedLat, storedLon);
+} else {
+  // Otherwise, ask the user for their location
+  navigator.geolocation.getCurrentPosition(function (position) {
+    var lat = position.coords.latitude;
+    var lon = position.coords.longitude;
+
+    // Store the coordinates in localStorage for future use
+    localStorage.setItem("latitude", lat);
+    localStorage.setItem("longitude", lon);
+
+    fetchWeatherData(lat, lon);
+  });
+}
+
+function fetchWeatherData(lat, lon) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=imperial`)
     .then(response => response.json())
     .then(data => {
@@ -102,5 +120,6 @@ navigator.geolocation.getCurrentPosition(function(position) {
       weatherElement.textContent = `Temperature: ${temperature}\u2109 | Description: ${weatherDescription} `;
       weatherElement.appendChild(weatherIconElement);
     });
-});
+}
+
 
