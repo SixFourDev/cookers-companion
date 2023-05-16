@@ -28,11 +28,6 @@ async function getTopSearches() {
     // Logs any error that may have occurred in the try block
     console.log(error);
   }
-
-  // Calls the getTopSearches function when the DOM content is loaded
-  document.addEventListener('DOMContentLoaded', function () {
-    getTopSearches();
-  });
 }
 
 // Creates displayRecipe function and takes recipe and recipeElement as two arguments
@@ -81,7 +76,7 @@ if (storedLat && storedLon) {
   fetchWeatherData(storedLat, storedLon);
 } else {
   // Otherwise, ask the user for their location
-  navigator.geolocation.getCurrentPosition(function (position) {
+  navigator.geolocation.getCurrentPosition(function(position) {
     var lat = position.coords.latitude;
     var lon = position.coords.longitude;
 
@@ -121,5 +116,6 @@ function fetchWeatherData(lat, lon) {
       weatherElement.appendChild(weatherIconElement);
     });
 }
+
 
 
