@@ -1,7 +1,16 @@
+main {
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
 .navbar-item{
   border: 1px solid black;
   font-size: 20px;
   height: 80px;
+}
+
+.navbar-end {
+  font-family: 'Poiret One', cursive;
 }
 
 .navbar-menu {
@@ -109,8 +118,9 @@ input[type="submit"]:hover {
   opacity: 0.8;
 }
 
-.container {
+div .container {
   font-size: medium;
+  margin-top: -100px;
   padding-top: 100px;
   text-align: center;
 }
@@ -120,27 +130,18 @@ text-align: center;
 }
 
 h2 {
+  font-family: 'Poiret One', cursive;
   text-align: center;
 }
 
 h3 {
+  font-family: 'Poiret One', cursive;
   text-align: center;
 }
 
 h4 {
+  font-family: 'Poiret One', cursive;
   text-align: center;
-  color: darkgray black;
-
-}
-
-ul {
-    color: black;
-    display:inline-block;
-    border:20px ridge cadetblue;
-    padding: 50px;
-    font-size: 20px;
-    font-weight: bold ;
-    background-color: cadetblue;
 }
 
 .recipe-container,
@@ -149,3 +150,22 @@ text-align: center;
 margin: auto;
 }
 
+.columns {
+  background-color: cadetblue;
+}
+
+.recipe-container {
+  margin-top: 20px;
+  width: 90%;
+}
+
+ul {
+  color: black;
+  display:inline-block;
+  justify-content: center;
+  border:20px ridge cadetblue;
+  padding: 50px;
+  font-size: 20px;
+  font-weight: bold ;
+  background-color: cadetblue;
+}
