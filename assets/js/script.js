@@ -28,6 +28,11 @@ async function getTopSearches() {
     // Logs any error that may have occurred in the try block
     console.log(error);
   }
+  
+  // Calls the getTopSearches function when the DOM content is loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    getTopSearches();
+  });
 }
 
 // Creates displayRecipe function and takes recipe and recipeElement as two arguments
@@ -98,5 +103,4 @@ navigator.geolocation.getCurrentPosition(function(position) {
       weatherElement.appendChild(weatherIconElement);
     });
 });
-
 
