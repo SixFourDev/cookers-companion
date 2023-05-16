@@ -10,7 +10,7 @@ var recipeElements = [
 // Function that gets the top 5 recipes based on the search query
 async function getTopSearches() {
   // Assigns topSearchesURL TheMealDB API endpoint
-  var topSearchesURL = `https://www.themealdb.com/api/json/v1/1/random.php`;
+  var topSearchesURL = `https://api.edamam.com/search?q=${query}&app_id=${edamamAppId}&app_key=${edamamAppKey}&from=0&to=5`;
   // Starts block of code to test for errors while being executed
   try {
     // For loop to iterate over the recipeElements array
