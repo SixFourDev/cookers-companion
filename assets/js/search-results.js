@@ -1,7 +1,7 @@
 var themealdbAppId = '';
 var themealdbAppKey = '1';
 // Creates variable query to top searches
-var query = "top searches";
+var query = "search results";
 
 // Selects all of the card elements in each column
 var recipeElements = [
@@ -15,7 +15,7 @@ var recipeElements = [
   // Function that gets the top 5 recipes based on the search query
   async function getTopSearches() {
     // Creates the URL for the API request using the search query and API credentials
-    var searchResults = `www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata`;
+    var searchResults = `www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata${query}&app_id=${themealdbAppId}&app_key=${themealdbAppKey}&from=0&to=5`;
     try {
       // Sends a request to the API and waits for a response
       var response = await fetch(searchResults);
