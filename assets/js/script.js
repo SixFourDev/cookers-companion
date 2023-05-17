@@ -9,49 +9,35 @@ var query = "top searches";
 
 // Selects all of the card elements in each column
 var recipeElements = [
-    document.querySelector(".column:nth-of-type(1) .card"),
-    document.querySelector(".column:nth-of-type(2) .card"),
-    document.querySelector(".column:nth-of-type(3) .card"),
-    document.querySelector(".column:nth-of-type(4) .card"),
-    document.querySelector(".column:nth-of-type(5) .card"),
-  ];
-  
-  // Function that gets the top 5 recipes based on the search query
-  async function getTopSearches() {
-    // Creates the URL for the API request using the search query and API credentials
-    var topSearchesURL = `https://api.edamam.com/search?q=${query}&app_id=${edamamAppId}&app_key=${edamamAppKey}&from=0&to=5`;
-    try {
-      // Sends a request to the API and waits for a response
+  document.querySelector(".column:nth-of-type(1) .card"),
+  document.querySelector(".column:nth-of-type(2) .card"),
+  document.querySelector(".column:nth-of-type(3) .card"),
+  document.querySelector(".column:nth-of-type(4) .card"),
+  document.querySelector(".column:nth-of-type(5) .card"),
+];
+
+// Function that gets the top 5 recipes based on the search query
+async function getTopSearches() {
+  // Assigns topSearchesURL TheMealDB API endpoint
+  var topSearchesURL = `https://www.themealdb.com/api/json/v1/1/random.php`;
+  // Starts block of code to test for errors while being executed
+  try {
+    // For loop to iterate over the recipeElements array
+    for (let i = 0; i < recipeElements.length; i++) {
+      // Sends a request to the API endpoint and waits for the response
       var response = await fetch(topSearchesURL);
       // Parses the response into JSON format
       var data = await response.json();
-      // Extracts the recipe data from the response
-      var hits = data.hits;
-  
-      // Loops through each recipe element and populates it with data from the API response
-      for (let i = 0; i < hits.length; i++) {
-        var recipe = hits[i].recipe;
-  
-        // Selects the recipe element for the current loop iteration
-        var recipeElement = recipeElements[i];
-  
-        // Updates the image, title, and ingredient text of the recipe element
-        recipeElement.querySelector("img").src = recipe.image;
-        recipeElement.querySelector(".title").textContent = recipe.label;
-        recipeElement.querySelector(".content p").textContent = recipe.ingredientLines.join(", ");
-  
-        // Sets the href attribute of the "View Recipe" link to the recipe URL
-        recipeElement.querySelector("a").href = recipe.url;
-      }
-    } catch (error) {
-      console.log(error);
+      // Accesses the first object in the meals array
+      var recipe = data.meals[0];
+      // Calls the displayRecipe function and passes the recipe and recipeElements array
+      displayRecipe(recipe, recipeElements[i]);
     }
+  } catch (error) {
+    // Logs any error that may have occurred in the try block
+    console.log(error);
   }
-  
-  // Calls the getTopSearches function when the DOM content is loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    getTopSearches();
-  });
+}
 
 // Creates displayRecipe function and takes recipe and recipeElement as two arguments
 function displayRecipe(recipe, recipeElement) {
@@ -87,38 +73,5 @@ function displayRecipe(recipe, recipeElement) {
 // Calls getTopSearches function
 getTopSearches();
 
-// Weather API Key
-var weatherApiKey = "0874d781cac886c8251059cc7a09d09a";
 
-navigator.geolocation.getCurrentPosition(function(position) {
-  var lat = position.coords.latitude;
-  var lon = position.coords.longitude;
-
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${weatherApiKey}&units=imperial`)
-    .then(response => response.json())
-    .then(data => {
-      var temperature = data.main.temp;
-      var weatherDescription = data.weather[0].description;
-      var weatherIcon = data.weather[0].icon;
-
-      var weatherIconUrl = "http://openweathermap.org/img/w/" + weatherIcon + ".png";
-
-      // Create an img element for the weather icon
-      var weatherIconElement = document.createElement("img");
-      weatherIconElement.src = weatherIconUrl;
-      weatherIconElement.alt = "Weather icon";
-
-      // Get the weather element
-      var weatherElement = document.querySelector("#weather");
-
-      // Clear out the weather element's current contents
-      while (weatherElement.firstChild) {
-        weatherElement.firstChild.remove();
-      }
-
-      // Add the temperature, weather description, and weather icon to the weather element
-      weatherElement.textContent = `Temperature: ${temperature}\u2109 | Description: ${weatherDescription} `;
-      weatherElement.appendChild(weatherIconElement);
-    });
-});
 
