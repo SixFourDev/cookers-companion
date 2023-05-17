@@ -1,46 +1,57 @@
+document.addEventListener('DOMContentLoaded', function () {
 
-// Selects all of the card elements in each column
-var recipeElements = [
-    document.querySelector(".column:nth-of-type(1) .card"),
-    document.querySelector(".column:nth-of-type(2) .card"),
-    document.querySelector(".column:nth-of-type(3) .card"),
-    document.querySelector(".column:nth-of-type(4) .card"),
-    document.querySelector(".column:nth-of-type(5) .card"),
-  ];
-  
-  // Function that gets the top 5 recipes based on the search query
-  async function getSearchResults() {
-    // Creates the URL for the API request using the search query and API credentials
-    var searchResults = `www.themealdb.com/api/json/v1/1/filter.php?c=${search}`;
-    try {
-      // Sends a request to the API and waits for a response
-      var response = await fetch(searchResults);
-      // Parses the response into JSON format
-      var data = await response.json();
-      // Extracts the recipe data from the response
-      var hits = data.hits;
-  
-      // Loops through each recipe element and populates it with data from the API response
-      for (let i = 0; i < hits.length; i++) {
-        var recipe = hits[i].recipe;
-  
-        // Selects the recipe element for the current loop iteration
-        var recipeElement = recipeElements[i];
-  
-        // Updates the image, title, and ingredient text of the recipe element
-        recipeElement.querySelector("img").src = recipe.image;
-        recipeElement.querySelector(".title").textContent = recipe.label;
-        recipeElement.querySelector(".content p").textContent = recipe.ingredientLines.join(", ");
-  
-        // Sets the href attribute of the "View Recipe" link to the recipe URL
-        recipeElement.querySelector("a").href = recipe.url;
-      }
-    } catch (error) {
-      console.log(error);
-    }
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get('search');
+
+  console.log('Search query:', query);
+
+  if (query) {
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log('API response:', data);
+        const resultsContainer = document.getElementById('results');
+        if (data.meals) {
+          data.meals.forEach(meal => {
+            const result = document.createElement('div');
+            result.className = 'column is-one-third';
+            result.innerHTML = `
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <p class="title is-4">${meal.strMeal}</p>
+                      <p class="subtitle">${meal.strArea}</p>
+                      <a href="recipe-details.html?id=${meal.idMeal}">
+                      <button class="button is-link">View Recipe</button>
+                    </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+            resultsContainer.appendChild(result);
+
+            // Add event listener to the "View Recipe" button
+            const viewRecipeButton = result.querySelector('a');
+            viewRecipeButton.addEventListener('click', function(e) {
+                e.preventDefault(); // prevent the link from redirecting immediately
+                localStorage.setItem('recipe', JSON.stringify(meal)); // store the selected recipe in localStorage
+                window.location.href = viewRecipeButton.href; // redirect to the recipe details page
+            });
+          });
+        } else {
+          console.log('No meals found for query:', query);
+        }
+      })
+      .catch(error => console.error('Fetch error:', error));
+  } else {
+    console.log('No search query provided.');
   }
-  
-  // Calls the getSearchResults function when the DOM content is loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    getSearchResults();
-  });
+
+});
