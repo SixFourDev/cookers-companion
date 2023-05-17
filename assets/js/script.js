@@ -17,7 +17,7 @@ async function getTopSearches() {
     for (let i = 0; i < recipeElements.length; i++) {
       // Sends a request to the API endpoint and waits for the response
       var response = await fetch(topSearchesURL);
-      // Takes response from API, and converts it to an object with json
+      // Parses the response into JSON format
       var data = await response.json();
       // Accesses the first object in the meals array
       var recipe = data.meals[0];
