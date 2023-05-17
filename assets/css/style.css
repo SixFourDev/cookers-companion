@@ -24,6 +24,37 @@ main {
   position: relative;
 }
 
+.search-input .autofill-box{
+  padding: 0px;
+  max-height: 250px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search-input.active .autofill-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-input.active .autofill-box li{
+  display: block;
+}
+
+.autofill-box li{
+  list-style: none;
+  padding: 8px 12px;
+  width: 100%; 
+  cursor: default;
+  border-radius: 3px;
+  display: none;
+}
+
+.autofill-box li:hover{
+  background: #efefef;
+}
+
 input[type="text"] {
   font-size: 20px;
   display: inline-block;
@@ -49,7 +80,7 @@ input[type="text"]:focus:hover {
 }
 
 input[type="text"]:focus {
-  width: 700px;
+  width: 300px;
   z-index: 1;
   border-bottom: 1px solid #BBB;
   cursor: text;

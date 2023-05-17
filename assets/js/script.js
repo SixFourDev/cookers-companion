@@ -64,5 +64,51 @@ function displayRecipe(recipe, recipeElement) {
 // Calls getTopSearches function
 getTopSearches();
 
+// Gets all required elements
+const searchWrapper = document.querySelector(".search-input");
+const inputBox = searchWrapper.querySelector("input");
+const suggBox = searchWrapper.querySelector(".autofill-box");
 
+// If the user presses any button and releases it 
+inputBox.onkeyup = (e)=>{
+  let userData = e.target.value; // Data the user enter
+  let emptyArray = [];
+  if(userData){
+        emptyArray = suggestions.filter((data)=>{
+        // Filters array value and user char to lowercase and only returns the word that start with the letter the user enters
+        return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+    });
+    emptyArray = emptyArray.map((data)=>{
+        return data = '<li>'+ data +'</li>';
+    });
+    searchWrapper.classList.add("active"); // Shows the autofill box
+    showSuggestions(emptyArray);
+    let allList = suggBox.querySelectorAll("li");
+    
+    for(let i = 0; i < allList.length; i++) {
+       // Adds onclick attribute to all li tags
+       allList[i].setAttribute("onclick", "select(this)");
+    }
+  }else{
+    searchWrapper.classList.remove("active"); // Hides the autofill box
+  }
+}
 
+// Function that on clicking the suggestion puts it in the input box
+function select(element){
+  let selectUserData = element.textContent;
+  inputBox.value = selectUserData;
+  searchWrapper.classList.remove("active");
+}
+
+// Function that adds an item from the suggestions arrary to the emptyArray
+function showSuggestions(list){
+    let listData;
+    if(!list.length){
+        userValue = inputBox.value;
+        listData = '<li>'+ userValue +'</li>';
+    }else{
+        listData = list.join('');
+    }
+    suggBox.innerHTML = listData;
+}

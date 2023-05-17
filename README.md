@@ -1,5 +1,8 @@
 ## What Is Cookers Companion?
-* Cookers Companion is a website that allows the user to find recipes, save them and search for even more. The website is user friendly and accessible. The webpage populates the top searches for the day and has a login, signup and accessible navigation and search bar. Cookers Companion has access to recipes that include dairy free, gluten free, and vegan options. We hope you enjoy navigating our website!
+Cookers Companion is a website that allows the user to find recipes, save them and search for even more. The website is user friendly and accessible. The webpage populates the top searches for the day and has a login, signup and accessible navigation and search bar. Cookers Companion has access to recipes that include dairy free, gluten free, and vegan options. We hope you enjoy navigating our website!
+
+## Navbar:
+The purpose of the navbar is to have the 5 main links, a search bar, and a weather app to show you temperature in your area. The search bar helps the user look up recipes with certain keywords, if the user enters the word chicken, then the results will take you to a new html and show you recipes with chicken. The search bar also has an autofill feature which lets the user quickly enter a keyword. The navbar also houses links to a login and signup page.
 
 ## Purpose:
 * The purpose of the Cooker's Companion is to give the users the oppurtunity to turn their home into their favorite restaurant. We hope the page is fun for cooking alone, cooking with loved ones or even just browsing.
