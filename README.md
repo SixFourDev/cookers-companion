@@ -13,9 +13,6 @@ The purpose of the navbar is to have the 5 main links, a search bar, and a weath
 
 In this repo you will find multiple JS files that supported the website to be interactive. You will also find style sheets for all of the HTML files that this repo holds. Our group has combined the files and created one website that functions throughout the different files.
 
-## Deployed Webpage:
-
-https://sixfourdev.github.io/cookers-companion/
 
 
 
@@ -40,4 +37,4 @@ https://validator.w3.org/
 
 https://github.com/SixFourDev/cookers-companion
 
-<!-- Add deployed webpage link and screenshot -->
+
