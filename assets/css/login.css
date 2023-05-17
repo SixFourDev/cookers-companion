@@ -2,41 +2,55 @@ html {
     height: 100%;
   }
   body {
+    /* The body of the page has no margin or passing and the background is set at Cadet Blue */
     margin:0;
     padding:0;
     font-family: sans-serif;
     background: cadetblue;
   }
   .button {
+    /* The line of code below sets the styling of the home button at the top left of the screen */
     background-color: darkgrey;
+    /* No Border */
     border: none;
+    /* Font Color */
     color: white;
+    /* Setting the padding around the button */
     padding: 15px 32px;
+    /* Text is centered */
     text-align: center;
     text-decoration: none;
+    /* Setting the width and height of the button */
     display: inline-block;
     font-size: 16px;
+    /* Set the cursor from an arrow to a pointer finger */
     cursor: pointer;
   }
   
   .login-box {
     position: absolute;
+    /* The below lines of code places the login box in the center of the page */
     top: 50%;
     left: 50%;
     width: 400px;
     padding: 40px;
+    /* The below line of code sets the box centered evenly on the x and y axis of the page */
     transform: translate(-50%, -50%);
+    /* Background Color */
     background:cadetblue;
     box-sizing: border-box;
+    /* Setting the box shadow of the login box */
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
     
   }
   
   .login-box h2 {
+    /* The below line of code styles the h2 attribute in the login html. */
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
+    /* The words are placed in the center of the page and the cursor is a pointer finger */
     text-align: center;
     cursor: pointer;
   }
@@ -46,6 +60,7 @@ html {
   }
   
   .login-box .user-box input {
+    /* The below line of code styles the user input boxes and makes the labels dissappear when you hover. The colors are set for the font to white. */
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -77,13 +92,17 @@ html {
   }
   
   .login-box form a {
+    /* The below line of code adds style elements to the login box that includes the user box  with the username and password text inputs */
     position: relative;
     display: inline-block;
     padding: 10px 20px;
+    /* Font Color */
     color: #03e9f4;
     font-size: 16px;
     text-decoration: none;
+    /* Controls Capitalization of the inputs */
     text-transform: uppercase;
+    /* Ensures text that is input in the text box does not run outside of the login box */
     overflow: hidden;
     transition: .5s;
     margin-top: 40px;
@@ -91,6 +110,7 @@ html {
   }
   
   .login-box a:hover {
+    /* The below ligns of code add style elements to the submit button when you hover over it. The box will have a light up animation that is set to the colors listed below */
     background: cadetblue;
     color: #fff;
     border-radius: 5px;
@@ -110,10 +130,12 @@ html {
     left: -100%;
     width: 100%;
     height: 2px;
+    /* Adds 2 different colors to the background */
     background: linear-gradient(90deg, transparent, cadetblue);
+    /* Combines animation properties */
     animation: btn-anim1 1s linear infinite;
   }
-  
+  /* Adds animation to the child element of the log in box */
   @keyframes btn-anim1 {
     0% {
       left: -100%;
@@ -132,7 +154,7 @@ html {
     animation: btn-anim2 1s linear infinite;
     animation-delay: .25s
   }
-  
+  /* Adds animation to the child element of the log in box */
   @keyframes btn-anim2 {
     0% {
       top: -100%;
@@ -151,7 +173,7 @@ html {
     animation: btn-anim3 1s linear infinite;
     animation-delay: .5s
   }
-  
+  /* Adds animation to the child element of the log in box */
   @keyframes btn-anim3 {
     0% {
       right: -100%;
@@ -170,7 +192,7 @@ html {
     animation: btn-anim4 1s linear infinite;
     animation-delay: .75s
   }
-  
+  /* Adds animation to the child element of the log in box */
   @keyframes btn-anim4 {
     0% {
       bottom: -100%;
@@ -180,3 +202,4 @@ html {
     }
   }
   
+  /* The login style sheet places the login text box in the center of the page. It also ensures that when you hover over username and password the label dissappears. When the user inputs the password it will not display and will only display as dots. */

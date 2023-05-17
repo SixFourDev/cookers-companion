@@ -120,12 +120,15 @@ margin: auto;
 }
 
 ul {
+  /* The style elements listed below created padding and created a border around the footer list items. */
   color: black;
   display:flex;
   border: 25px dashed cadetblue;
   padding: 50px;
   font-size: 15px;
+  /* Bold lettering */
   font-weight: bold ;
+  /* Background color of the list items */
   background-color: cadetblue;
   padding-left: 2rem;
   list-style-type:none;

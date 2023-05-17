@@ -8,14 +8,20 @@ html {
     background: cadetblue;
   }
   .button {
+    /* The below lines of code style the home button and ensure that it is placed to the left corner of the screen */
+    /* The background color is set to darkgrey */
     background-color: darkgrey;
     border: none;
+    /* Font color is white */
     color: white;
     padding: 15px 32px;
+    /* Text centered in the middle of the button */
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    /* Font size is 16 pixels */
     font-size: 16px;
+    /* Cursor is set to a pointer finger */
     cursor: pointer;
   }
   
@@ -113,7 +119,7 @@ html {
     background: linear-gradient(90deg, transparent, cadetblue);
     animation: btn-anim1 1s linear infinite;
   }
-  
+  /* Adds animation to the submit button */
   @keyframes btn-anim1 {
     0% {
       left: -100%;
