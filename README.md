@@ -8,9 +8,6 @@
 
 * In this repo you will find multiple JS files that supported the website to be interactive. You will also find style sheets for all of the HTML files that this repo holds. Our group has combined the files and created one website that functions throughout the different files.
 
-## Deployed Webpage:
-
-https://sixfourdev.github.io/cookers-companion/
 
 <img width="1512" alt="Screen Shot 2023-05-16 at 8 39 58 PM" src="https://github.com/SixFourDev/cookers-companion/assets/127274865/6a92df16-e909-4d1d-ba9c-0916e23b0f30">
 
@@ -53,4 +50,4 @@ Github : https://github.com/SixFourDev/cookers-companion
 
 Webpage : https://sixfourdev.github.io/cookers-companion/
 
-<!-- Add deployed webpage link and screenshot -->
+
