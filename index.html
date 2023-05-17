@@ -22,17 +22,14 @@
       <nav class="navbar is-transparent has-logo-above" role="navigation" aria-label="main navigation">
         <div class="navbar-menu">
           <div class="wrap" class="navbar-start">
-            <form action="search-results.html" autocomplete="off" method="GET">
-              <input id="search" name="search" type="text" placeholder="Search for recipes" class="search-input">
-              <input id="search_submit" value="Search" type="submit">
-              <div class="autofill-box">
-                <li>chicken</li>
-                <li>chicken</li>
-                <li>chicken</li>
-                <li>chicken</li>
-                <li>chicken</li> 
-              </div>
-          </form>          
+            <div class="search-input">
+              <form action="search-results.html" autocomplete="off" method="GET">
+                <input id="search" name="search" type="text" placeholder="Search for recipes">
+                <input id="search_submit" value="Search" type="submit">
+                <div class="autofill-box">
+                </div>
+              </form>     
+            </div>     
           </div>
           <div id="weather">
             <img id="weatherIcon" src="" alt="Weather Icon">
@@ -167,6 +164,7 @@
     <script src="./assets/js/weather.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/search-results.js"></script>
+    <script src="./assets/js/suggestions.js"></script>
 </body>
 
 </html>
