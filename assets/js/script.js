@@ -82,7 +82,7 @@ inputBox.onkeyup = (e)=>{
         return data = '<li>'+ data +'</li>';
     });
     searchWrapper.classList.add("active"); // Shows the autofill box
-    showSuggestions(emptyArray);
+    showSuggestions(emptyArray); // Calls showSuggestions function to fill emptyArray
     let allList = suggBox.querySelectorAll("li");
     
     for(let i = 0; i < allList.length; i++) {
