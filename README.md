@@ -25,7 +25,6 @@ Cookers Companion is a website that allows the user to find recipes, save them a
 <img width="1512" alt="Screen Shot 2023-05-18 at 7 08 42 AM" src="https://github.com/SixFourDev/cookers-companion/assets/127274865/8bbe22a5-3f4b-49a3-83fb-8d370b730921">
 
 
-<!-- Add topics for README including functionality, purpose, and sources -->
 
 ## Contributors
 

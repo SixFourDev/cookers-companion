@@ -8,18 +8,26 @@ html {
     background: cadetblue;
   }
   .button {
+    /* The below lines of code style the home button and ensure that it is placed to the left corner of the screen */
+    /* The background color is set to darkgrey */
     background-color: darkgrey;
     border: none;
+    /* Font color is white */
     color: white;
     padding: 15px 32px;
+    /* Text centered in the middle of the button */
     text-align: center;
     text-decoration: none;
+    /* does not add a line-break after the element, so the home button can sit next to other elements.  */
     display: inline-block;
+    /* Font size is 16 pixels */
     font-size: 16px;
+    /* Cursor is set to a pointer finger */
     cursor: pointer;
   }
   
   .signup-box {
+    /* Ensures that the box stays the same position no matter where you are on the page */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -27,7 +35,9 @@ html {
     padding: 40px;
     transform: translate(-50%, -50%);
     background:cadetblue;
+    /* include the padding and border in an element's total width and height. */
     box-sizing: border-box;
+    /* Placed a box shadow around the sign-up box */
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
     
@@ -37,6 +47,7 @@ html {
     margin: 0 0 30px;
     padding: 0;
     color: #fff;
+    /* The words are placed in the center of the page and the cursor is a pointer finger */
     text-align: center;
     cursor: pointer;
   }
@@ -46,6 +57,7 @@ html {
   }
   
   .signup-box .user-box input {
+    /* The below line of code styles the user input boxes and makes the labels dissappear when you hover. The colors are set for the font to white. */
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -91,6 +103,7 @@ html {
   }
   
   .signup-box a:hover {
+    /* The below ligns of code add style elements to the submit button when you hover over it. The box will have a light up animation that is set to the colors listed below */
     background: cadetblue;
     color: #fff;
     border-radius: 5px;
@@ -101,6 +114,7 @@ html {
   }
   
   .signup-box a span {
+    /* is positioned relative to the nearest positioned ancestor */
     position: absolute;
     display: block;
   }
@@ -110,10 +124,11 @@ html {
     left: -100%;
     width: 100%;
     height: 2px;
+     /* Adds multiple different colors to the background */
     background: linear-gradient(90deg, transparent, cadetblue);
     animation: btn-anim1 1s linear infinite;
   }
-  
+  /* Adds animation to the submit button */
   @keyframes btn-anim1 {
     0% {
       left: -100%;
@@ -161,11 +176,12 @@ html {
     }
   }
   
-  .login-box a span:nth-child(4) {
+  .signup-box a span:nth-child(4) {
     bottom: -100%;
     left: 0;
     width: 2px;
     height: 100%;
+    /* Adds multiple different colors to the background */
     background: linear-gradient(360deg, transparent, #03e9f4);
     animation: btn-anim4 1s linear infinite;
     animation-delay: .75s
